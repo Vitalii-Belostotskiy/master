@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <script>
+
+            function calculate (operator, num1, num2) {
+
+                // Проверка корректности ввода данных
+                const unvalid = operator === '' || (typeof num1 !='number') || (typeof num2 != 'number');
+                let result;
+
+                 if (unvalid) {
+                     result = 'error';
+                 }
+
+                  // Блок для вычислений
+                  else if (operator === 'summ') {
+                    result = num1 + num2;
+                } else if (operator === 'min') {
+                    result = num1 - num2;
+                } else if (operator === 'multi') {
+                    result = num1 * num2;
+                } else if(operator === 'divide') {
+                    result = num1 / num2;
+                } else {
+                    result = 'unknown operation';
+                } 
+
+                return result;
+                     
+        }
+
+       
+        
+        console.log(calculate());
+        console.log(calculate('pum', 10, 2));
+        console.log(calculate('summ', 6, 2));
+        console.log(calculate('min', 2, 2));
+        console.log(calculate('multi', 2, 3));
+        console.log(calculate('divide', 2, 0));
+   
+
+      
+            
+           
+
+            
+            
+
+           
+
+        
+        
+    </script>
+
+</body>
+</html>
