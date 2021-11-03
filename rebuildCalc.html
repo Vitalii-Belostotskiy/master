@@ -10,62 +10,120 @@
 
     <script>
 
-        function calc(operator, num1, num2) {
-            // let num1 = +prompt('Enter first number')
-            // let operator = +prompt('Enter math operation: - , +, * or /');
-            // let num2 = +prompt('Enter second number');
-            
-            let result;
+        // Первый вариант
 
-            // Проверка корректности ввода данных
-            const unvalid = operator === '' || (typeof num1 != 'number') || (typeof num2 != 'number');
+function calculator() {
+            let num1 = +prompt('Enter first number')
+            let operator = prompt('Enter math operation: - , +, * or /');
+            let num2 = +prompt('Enter second number');
 
-            if(unvalid) {
-                return 'error';
-            } else if(num2 === 0) {
-                return result = 'cannot divide by zero'
-            }
-            // Окончание проверки
-
-
-            // Блок switch
-            switch(operator) {
-                case 'min': 
-                result = num1 - num2;
-                break; 
-
-                case 'sum': 
-                result = num1 + num2; 
-                break; 
-
-                case 'multi': 
-                result = num1 * num2;
-                break; 
-
-                case 'divide': 
-                result = num1 / num2;
-                break;
-
-                default: 
-                result = 'unknown operation';
-            }
-
-            return result;
-            
-
+            alert(calc(operator, num1, num2));
         }
 
-        console.log(calc());
-        console.log(calc('bum', 3, 5));
-        console.log(calc('sum', 5, 8));
-        console.log(calc('min', 10, 4));
-        console.log(calc('multi', 5, 5));
-        console.log(calc('divide', 10, 2));
-        console.log(calc('divide', 10, 0));
-        console.log(calc('divide', 'c', 'b'));
-       
-        
+        function calc(operator, num1, num2) {
+          
+            
+          let result;
 
+          // Проверка корректности ввода данных
+          const unvalid = operator === '' || (typeof num1 != 'number') || (typeof num2 != 'number');
+
+          if(unvalid) {
+              return 'error';
+          } else if(num2 === 0) {
+              return result = 'cannot divide by zero'
+          }
+          // Окончание проверки
+
+
+          // Блок switch
+          switch(operator) {
+              case '-': 
+              result = num1 - num2;
+              break; 
+
+              case '+': 
+              result = num1 + num2; 
+              break; 
+
+              case '*': 
+              result = num1 * num2;
+              break; 
+
+              case '/': 
+              result = num1 / num2;
+              break;
+
+              default: 
+              result = 'unknown operation';
+          }
+
+          return result;
+          
+
+      }
+
+      calculator();
+
+    //   Второй вариант
+
+        // function calc(operator, num1, num2) {
+          
+            
+        //     let result;
+
+        //     // Проверка корректности ввода данных
+        //     const unvalid = operator === '' || (typeof num1 != 'number') || (typeof num2 != 'number');
+
+        //     if(unvalid) {
+        //         return 'error';
+        //     } else if(num2 === 0) {
+        //         return result = 'cannot divide by zero'
+        //     }
+        //     // Окончание проверки
+
+
+        //     // Блок switch
+        //     switch(operator) {
+        //         case 'min': 
+        //         result = num1 - num2;
+        //         break; 
+
+        //         case 'sum': 
+        //         result = num1 + num2; 
+        //         break; 
+
+        //         case 'multi': 
+        //         result = num1 * num2;
+        //         break; 
+
+        //         case 'divide': 
+        //         result = num1 / num2;
+        //         break;
+
+        //         default: 
+        //         result = 'unknown operation';
+        //     }
+
+        //     return result;
+            
+
+        // }
+
+        // console.log(calc());
+        // console.log(calc('bum', 3, 5));
+        // console.log(calc('sum', 5, 8));
+        // console.log(calc('min', 10, 4));
+        // console.log(calc('multi', 5, 5));
+        // console.log(calc('divide', 10, 2));
+        // console.log(calc('divide', 10, 0));
+        // console.log(calc('divide', 'c', 'b'));
+       
+
+        
+        
+        
+        
 
     </script>
     
