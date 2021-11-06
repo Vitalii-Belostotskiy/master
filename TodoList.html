@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+<body>
+
+    <script>
+     const list = {
+            'create a task': 'In progress',
+            'make a bad': 'Done',
+            'write a pos': 'To todo',
+        };
+
+    function changeStatus(task, status)  {
+        let message;
+        list[task] = status;
+         if(status === 'Done') {
+            message = (`Done: ${task}`);
+        } else if (status === 'In progres') {
+            message = (`In progres: ${task}`);
+        } else {
+            message = (`To do: ${task}`);
+        }
+        return message;
+     };
+
+     function addTask(newTask) {
+        list[newTask] = list[newTask];
+     };
+
+     function deleteTask(needToDelete){
+        delete list[needToDelete]
+     };
+
+     console.log(changeStatus('eat', 'In progres'));
+     console.log(changeStatus('create a task', 'Done'));
+     console.log(changeStatus('make a bad', 'In progres'));
+     console.log(changeStatus('go Bora-Bora'));
+
+     addTask('have a walk');
+     console.log(list);
+     deleteTask('have a walk');
+     console.log(list);
+        
+     
+
+        
+
+      
+
+        
+
+
+    </script>
+    
+</body>
+</html>
