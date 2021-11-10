@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+
+    <script>
+        function showVerticalMessage(str) {
+
+            let newStr;
+            if(str.charAt(0) === str.charAt(0).toLowerCase()) {  
+
+      // Применил charAt(), если строка пустая то будет не undefined а будет вывод пустой строки          
+                    newStr =  str.charAt(0).toUpperCase() + str.slice(1);
+                   
+                   
+                };
+
+                for(let char of newStr.slice(0, 10)) {
+                    console.log(char);
+                }
+
+        }
+        showVerticalMessage('');
+        showVerticalMessage('марафон');
+        showVerticalMessage('марафон от Артема Димитрова');
+       
+        
+    </script>
+    
+</body>
+</html>
