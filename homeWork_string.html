@@ -12,20 +12,23 @@
         function showVerticalMessage(str) {
 
             let newStr;
-            if(str.charAt(0) === str.charAt(0).toLowerCase()) {  
+            if(str.charAt(0) == str.charAt(0).toLowerCase()) {  
 
       // Применил charAt(), если строка пустая то будет не undefined а будет вывод пустой строки          
                     newStr =  str.charAt(0).toUpperCase() + str.slice(1);
                    
                    
+                } else {
+                    newStr = str;
                 };
+                // console.log(newStr);
 
                 for(let char of newStr.slice(0, 10)) {
                     console.log(char);
                 }
 
         }
-        showVerticalMessage('');
+        
         showVerticalMessage('марафон');
         showVerticalMessage('марафон от Артема Димитрова');
        
