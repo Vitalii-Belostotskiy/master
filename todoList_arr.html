@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list with arrays</title>
+</head>
+<body>
+
+    <script>
+const list = [ 
+	{ 
+			id: 1,
+			name: 'create a post', 
+			status: 'TODO', 
+			priority: 'low'  
+	}, 
+	{ 
+			id: 2,
+			name: 'test', 
+			status: 'Done', 
+			priority: 'high'  
+	} 
+]
+
+function changeStatus (task, status) {
+    const newStatus = list.find(item => item.name == task);
+    newStatus.status = status;
+    
+}
+function createId () {
+            const newId = list.map(item => item.id);
+            for(let i = 1; i <= newId.length +1; i++) {
+                if(!newId.includes(i)) return i; 
+            } 
+        }    
+
+function addTask(task, status, priority) {
+    
+    list.push({
+        id: createId(),
+        name: task,
+        status: status,
+        priority: priority,
+    })
+
+}
+
+function deleteTask(arr, task) {
+    let removed = arr.find(item => item.name == task);
+    if(removed) {
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] == removed) {
+                arr.splice(i, 1)
+            } 
+        }
+    }
+
+}
+
+function showList() {
+    console.log('To do:');
+    const todoTask = list.filter(item => item.status == 'TODO');
+    if(!todoTask) {
+        console.log('-')
+    } else {
+        for(let i = 0; i <todoTask.length; i++) {
+            console.log(`${todoTask[i].name}`)
+        }
+        
+    }
+    console.log('Done:');
+    const doneTask = list.filter(item => item.status == 'Done');
+    if(!doneTask) {
+        console.log('-')
+    } else {
+        for(let i = 0; i < doneTask.length; i++) {
+            console.log(`${doneTask[i].name}`)
+        }
+    }
+}
+changeStatus('create a post', 'Done');
+changeStatus('test', 'TODO');
+createId();
+addTask('make a bad', 'Done', 'low');
+
+console.log(list)
+deleteTask(list, 'make a bad')
+console.log(list)
+
+showList();
+
+
+
+      
+    </script>
+    
+</body>
+</html>
