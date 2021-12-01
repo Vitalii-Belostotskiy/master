@@ -36,9 +36,12 @@ window.addEventListener('load', function() {
     
 });
 // стереть символ в output справа на лево
+// эта функция будет эспортируемой из view.js
 function back() {
-    let exp = output.innerHTML;
-    output.innerHTML = exp.substring(0, exp.length - 1);
+    let backButton = output.innerHTML;
+    output.innerHTML = backButton.substring(0, exp.length - 1);
 };
+
+
 
 
